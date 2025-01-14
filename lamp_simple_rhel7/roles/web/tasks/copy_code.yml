@@ -1,8 +1,12 @@
 ---
 # These tasks are responsible for copying the latest dev/production code from
 # the version control system.
-- name: rm -rf /var/www/html/.*
-  command: rm -rf /var/www/html/*
+- name: Delete the files in /var/www/html
+  file:
+    path: /var/www/html/*
+    state: absent
+  become: yes  # 提升权限
+
 
 
 - name: Copy the code from repository
