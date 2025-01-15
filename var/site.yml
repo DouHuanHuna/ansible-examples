@@ -1,0 +1,18 @@
+---
+#
+- hosts: localhost
+  vars:
+    - global_var: hello ansible
+
+  tasks:
+    - name: global_var is {{ global_var }}
+      debug:
+        msg: this message is about {{ global_var }}
+
+  roles:
+    - boolean
+    - common
+    - dict
+    - filter
+    - num
+    - default

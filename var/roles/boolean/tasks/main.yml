@@ -1,0 +1,6 @@
+---
+#
+
+- name: boolean
+  debug:
+    msg: boolean is {{ boolean_var }}

@@ -1,2 +1,5 @@
 [pull_mode_hosts]
 192.168.126.147
+
+[webservers]
+192.168.126.147
