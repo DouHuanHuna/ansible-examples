@@ -1,0 +1,9 @@
+---
+#
+- name: Update Apache configuration
+  command: echo "Hello, World!" > /tmp/test_file
+  notify: restart apache
+
+- name: Empty task with debug
+  debug:
+    msg: "This is an empty task."

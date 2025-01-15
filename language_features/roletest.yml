@@ -7,19 +7,19 @@
 #
 # listing the roles as foo and bar will auto include the following:
 #
-#    tasks    from ./roles/foo/tasks/main.yml,    then ./roles/bar/tasks/main.yml
-#    handlers from ./roles/foo/handlers/main.yml, then ./roles/bar/handlers/main.yml
-#    vars     from ./roles/foo/vars/main.yml,     then ./roles/bar/vars/main.yml
+#    tasks    from ./roles/foo/tasks/site.yml,    then ./roles/bar/tasks/site.yml
+#    handlers from ./roles/foo/handlers/site.yml, then ./roles/bar/handlers/site.yml
+#    vars     from ./roles/foo/vars/site.yml,     then ./roles/bar/vars/site.yml
 #
 # should any of these files not exist, that is ok, and they will simply not be loaded.
 #
-# should the task file in foo/tasks/main.yml want to include subtasks in other files, that
+# should the task file in foo/tasks/site.yml want to include subtasks in other files, that
 # is also permitted.
 #
 # templates and copy operations also get smarter about where to look for content when using
 # roles.
 #
-# as an example, a task in foo/tasks/main.yml could copy or template a file by
+# as an example, a task in foo/tasks/site.yml could copy or template a file by
 # referencing a "src=foo.j2" rather than having to explicitly path src=roles/foo/templates/foo.j2.
 
 ---
