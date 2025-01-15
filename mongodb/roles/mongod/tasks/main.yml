@@ -7,10 +7,10 @@
   with_items: groups.replication_servers
 
 - name: create log directory for mongodb
-  file: path=/var/log/mongo state=directory owner=mongod group=mongod
+  file: path=/vars/log/mongo state=directory owner=mongod group=mongod
 
 - name: create run directory for mongodb
-  file: path=/var/run/mongo state=directory owner=mongod group=mongod
+  file: path=/vars/run/mongo state=directory owner=mongod group=mongod
 
 - name: Create the mongodb startup file
   template: src=mongod.j2 dest=/etc/init.d/mongod-{{ inventory_hostname }} mode=0655
@@ -28,7 +28,7 @@
 
 
 - name: Start the mongodb service
-  command: creates=/var/lock/subsys/mongod-{{ inventory_hostname }} /etc/init.d/mongod-{{ inventory_hostname }} start
+  command: creates=/vars/lock/subsys/mongod-{{ inventory_hostname }} /etc/init.d/mongod-{{ inventory_hostname }} start
   delegate_to: '{{ item }}'
   with_items: groups.replication_servers
 

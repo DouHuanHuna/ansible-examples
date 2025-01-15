@@ -21,7 +21,7 @@
       - https://spymemcached.googlecode.com/files/spymemcached-2.10.2.jar
 
   - name: Deploy sample app
-    copy: src=msm-sample-webapp-1.0-SNAPSHOT.war dest=/var/lib/tomcat/webapps/ROOT.war owner=tomcat group=tomcat
+    copy: src=msm-sample-webapp-1.0-SNAPSHOT.war dest=/vars/lib/tomcat/webapps/ROOT.war owner=tomcat group=tomcat
 
   - name: Start tomcat service
     service: name=tomcat state=started enabled=yes

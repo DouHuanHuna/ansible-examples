@@ -1,17 +1,17 @@
 ---
 # These tasks are responsible for copying the latest dev/production code from
 # the version control system.
-- name: Delete the files in /var/www/html
+- name: Delete the files in /vars/www/html
   file:
-    path: /var/www/html/*
+    path: /vars/www/html/*
     state: absent
   become: yes  # 提升权限
 
 
 
 - name: Copy the code from repository
-  git: repo={{ repository }} dest=/var/www/html/
+  git: repo={{ repository }} dest=/vars/www/html/
 
 
 - name: Creates the index.php file
-  template: src=index.php.j2 dest=/var/www/html/index.php
+  template: src=index.php.j2 dest=/vars/www/html/index.php

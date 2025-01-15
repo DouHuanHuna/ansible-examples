@@ -16,7 +16,7 @@
   copy: src=roles/mongod/files/secret dest={{ mongodb_datadir_prefix }}/secret owner=mongod group=mongod mode=0400
 
 - name: Start the mongo configuration server service
-  command: creates=/var/lock/subsys/mongoc /etc/init.d/mongoc start
+  command: creates=/vars/lock/subsys/mongoc /etc/init.d/mongoc start
 
 - name: pause
   pause: seconds=20

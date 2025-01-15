@@ -14,7 +14,7 @@
   tasks:
 
   - name: Create a zfs file system
-    zfs: name={{pool}}/var/log/httpd state=present
+    zfs: name={{pool}}/vars/log/httpd state=present
 
   - name: Create a zfs file system with quota of 10GiB and visible snapdir
     zfs: name={{pool}}/ansible quota='10G' snapdir=visible state=present
